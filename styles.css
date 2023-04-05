@@ -6,6 +6,7 @@ html {
   }
 body{
     font-family: 'Mulish', sans-serif;
+    font-size: 1rem;
 }
 header {
     width: 100%;
@@ -36,37 +37,46 @@ header {
     font-size: 1.6rem;
 }
 
-/* End header  */
-
-/* Begin first section  */
-#sec1{
-    background: url(sec1-bg.png) no-repeat 90%/400px;
-}
-#test{
-    height: 350px;
-    background-color: rgba(50,  50, 50, 0.6);
-    padding: 10px;
-}
-#test h3{
-    font-size: 2rem;
-    color: white;
-    padding: 20px 0 20px 20px;
-}
-#test p{
-    font-size: 1.5rem;
-    color: white;
-    padding: 20px 0 50px 20px;
-    max-width: 300px;
-    font-weight: 200;
-    line-height: 1.8;
-
-}
-#test a{
-    margin: 15px;
-    font-size: 1.7rem;
-    padding: 15px;
+#contact-us{
+    margin-top: -7px;
+    padding: 7px;
     color: white;
     background: purple;
     border-radius: 30px;
 }
+
+/* End header  */
+
+/* Begin first section  */
+#sec1{
+    background: url(sec1-bg.png) no-repeat 80%/500px;
+}
+#test{
+    height: 350px;
+    background-color: rgba(50,  50, 50, 0.6);
+    color: white;
+    padding: 45px 0 0 15%;
+}
+#test h3{
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+#test p{
+    font-size: 1.5rem;
+    max-width: 270px;
+    font-weight: 200;
+    line-height: 1.8;
+    margin-bottom: 50px;
+}
+#test a{
+    font-size: 1.7rem;
+    padding: 12px 20px;
+    background: purple;
+    border-radius: 50px;
+}
+
+#banner img{
+    max-width: 100px;
+}
+
 
