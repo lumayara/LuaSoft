@@ -49,10 +49,10 @@ header {
 
 /* Begin first section  */
 #sec1{
-    background: url(sec1-bg.png) no-repeat 80%/500px;
+    background: url(sec1-bg.png) no-repeat 80%/430px;
 }
 #test{
-    height: 350px;
+    height: 340px;
     background-color: rgba(50,  50, 50, 0.6);
     color: white;
     padding: 45px 0 0 15%;
@@ -74,9 +74,36 @@ header {
     background: purple;
     border-radius: 50px;
 }
-
-#banner img{
+.banner{
+    height: 90px;
+    background-color: rgba(30,  30, 50, 0.6);
+}
+.banner img{
     max-width: 100px;
+    max-height: 55px;
 }
 
+/* End first section */
 
+/* Begin Services section */
+
+.services {
+    background-color: #f8f8f8;
+    text-align: center;
+}
+.services h1 {
+    font-size: 3.5rem;
+    padding: 20px;
+ }
+.services-box {
+    background-color: #fff;
+    height: 300px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+.services-box p {
+    margin: 20px 0;
+    font-size: 1.3rem;
+    line-height: 1.4;
+}
