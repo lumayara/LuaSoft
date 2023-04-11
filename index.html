@@ -9,23 +9,28 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;600&display=swap">
 </head>
+
 <body>
     <header class="flex-container">
         <a id="logo" href="#">
             <img src="logo.png" alt="logo">
         </a>
         <nav id="nav">
-            <a href="#">Services</a>
-            <a href="#">Technologies</a>
+            <a href="#services">Services</a>
+            <a href="#technologies">Technologies</a>
             <a href="#">Case Studies</a>
             <a href="#" id="contact-us">Contact Us</a>
         </nav>
     </header>
-    <section id="sec1">
-        <div id="test">
+    <section class="flex-container" id="sec1">
+        <div class="sec1-text flex-container-column">
             <h3>Build what is in your mind</h3>
-            <p>LuaSoft is here to help you overcome business challenges and grow with our software development, databases, cloud services and custom solutions.</p>
+            <p>LuaSoft is here to help you overcome business challenges and grow with our software development,
+                databases, cloud services and custom solutions.</p>
             <a href="#">Get a free consultation</a>
+        </div>
+        <div class="sec1-bg-img">
+            <img src="sec1-bg.png">
         </div>
     </section>
     <div class="banner flex-container">
@@ -33,30 +38,58 @@
         <img src="b2.png">
         <img src="b3.png">
         <img src="b5.png">
-        <img src="b1.png">        
+        <img src="b1.png">
     </div>
-    <section class="services">
-            <h1>Services</h1>
+    <section id="services">
+        <h1>Services</h1>
         <div class="flex-container">
-              <div class="services-box">
-                <img src="logo.png">
-                <p>WEB DEVELOPMENT<br>
-                CLOUD DEVELOPMENT<br>
-                CUSTOM CHATBOTS</p>
-              </div>
-              <div class="services-box">
-                <img src="logo.png">
-                <p>DATABASE DESIGN<br>
-                DATABASE MIGRATION</p>
-              </div>
-              <div class="services-box">
-                <img src="logo.png">
-                <p>WORDPRESS DEVELOPMENT<br>
-                WIX DEVELOPMENT</p>
-              </div>
-          </div>
-      </section>
-      
+            <div class="services-box flex-container-column">
+                <div class="services-icons flex-container">
+                    <img src="cloud.png">
+                </div>
+                <ul class="flex-container-column">
+                    <li>WEB DEVELOPMENT</li>
+                    <li>CLOUD DEVELOPMENT</li>
+                    <li>CUSTOM CHATBOTS</li>
+                </ul>
+            </div>
+            <div class="services-box flex-container-column">
+                <div class="services-icons flex-container">
+                    <img src="database.png">
+                </div>
+                <ul class="flex-container-column">
+                    <li>DATABASE DESIGN</li>
+                    <li>DATABASE MIGRATION</li>
+                </ul>
+            </div>
+            <div class="services-box flex-container-column">
+                <div class="services-icons flex-container">
+                    <img src="website.png">
+                </div>
+                <ul class="flex-container-column">
+                    <li>WORDPRESS DEVELOPMENT</li>
+                    <li>WIX DEVELOPMENT</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="technologies">
+        <h1 class="deslocada">Technologies</h1>
+        <div class="tech-content">
+            <img src="tech-main.png">
+            <ul class="tech-items">
+                <li>Azure, AWS, GCP Development</li>
+                <li>Custom Chatbots</li>
+                <li>MySQL, SQL Server, Postgres, NoSQL</li>
+                <li>Database Migration to Cloud</li>
+                <li>Wordpress</li>
+                <li>WIX</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- case studies section idea: a background video of colorful doplets falling into a white board  -->
+
 </body>
 
 </html>

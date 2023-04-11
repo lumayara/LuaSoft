@@ -3,15 +3,23 @@ html {
          Info: 1rem === 10px, 1.5rem === 15px, 2rem === 20px and so forth
     */
     font-size: 10px;
-  }
+
+    /* This offsets the header when you jump to a section */
+    scroll-padding-top: 85px;
+
+    /* scroll fix while we are not using javascript yet (it's not suported in many browsers) */
+    scroll-behavior: smooth;
+}
+
 body{
     font-family: 'Mulish', sans-serif;
     font-size: 1rem;
 }
-header {
-    width: 100%;
-    height: 80px;
-    background-color: rgb(215, 253, 253);
+
+h1{
+    font-size: 3.5rem;
+    font-weight: 600;
+    padding: 60px;
 }
 
 .flex-container {
@@ -21,63 +29,113 @@ header {
     text-align: center;
 }
 
-#logo {
-    flex: 30%;
+.flex-container-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
+/* Begin header  */
+
+header {
+    width: 100%;
+    height: 85px;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+}
+
+#logo {
+    flex: 15%;
+    display: flex;
+    justify-content: end;
+}
+
 #logo img {
-    max-height: 65px;
-    margin: 0 auto;
+    max-height: 70px;
 }
 
 #nav {
-    flex: 70%;
+    flex: 85%;
     min-width: 350px;
     display: flex;
     justify-content: space-evenly;
     font-size: 1.6rem;
+    font-weight: 600;
 }
 
 #contact-us{
     margin-top: -7px;
-    padding: 7px;
+    padding: 7px 18px;
     color: white;
-    background: purple;
+    /* background: purple; */
+    background-image: linear-gradient(140deg, rgba(128, 0, 50, 1) 0%, rgba(188, 112, 164, 1) 60%, rgba(109, 180, 238, 1) 95%);
     border-radius: 30px;
 }
 
 /* End header  */
 
 /* Begin first section  */
+
 #sec1{
-    background: url(sec1-bg.png) no-repeat 80%/430px;
+    /* background: url(sec1-bg.png) no-repeat 80%/auto 450px; */
+    /* background-image: linear-gradient(140deg, rgba(50,  50, 50, 0.6) 0%, rgba(188, 112, 164, 0.4) 50%, rgba(109, 180, 238, 0.3) 75%); */
+    /* background-image: linear-gradient(140deg, rgba(50,  50, 50, 0.6), rgba(50,  50, 50, 0.2)); */
+    background-image: url(obra-tech.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100% 80%;
+    height: 600px;
+    justify-content: center;
 }
-#test{
-    height: 340px;
-    background-color: rgba(50,  50, 50, 0.6);
-    color: white;
-    padding: 45px 0 0 15%;
+
+.sec1-text{
+    /* background-color: rgba(50,  50, 50, 0.6); */
+    color: black;
+    /* color: white; */
+    margin-left: 50px;
+    text-align: left;
 }
-#test h3{
-    font-size: 2rem;
-    margin-bottom: 40px;
+
+.sec1-text h3{
+    font-size: 2.3rem;
+    font-weight: 600;
+    padding-bottom: 50px;
 }
-#test p{
-    font-size: 1.5rem;
-    max-width: 270px;
-    font-weight: 200;
+
+.sec1-text p{
+    font-size: 1.7rem;
+    width: 320px;
+    font-weight: 400;
     line-height: 1.8;
     margin-bottom: 50px;
 }
-#test a{
-    font-size: 1.7rem;
-    padding: 12px 20px;
-    background: purple;
+.sec1-text a{
+    font-size: 1.8rem;
+    font-weight: 600;
+    padding: 12px 25px;
+    /* background: purple; */
+    background-image: linear-gradient(140deg, rgba(128, 0, 50, 1) 0%, rgba(188, 112, 164, 1) 60%, rgba(109, 180, 238, 1) 95%);
     border-radius: 50px;
+    margin-right: auto; 
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+    color: white;
 }
+
+.sec1-bg-img{
+    z-index: -1;
+    margin-left: -30px
+}
+
 .banner{
     height: 90px;
-    background-color: rgba(30,  30, 50, 0.6);
+    /* background-color: rgba(30, 30, 50, 0.6); */
+    /* background-image: linear-gradient(140deg, rgba(50,  50, 50, 0.8) 0%, rgba(188, 112, 164, 0.7) 50%, rgba(109, 180, 238, 0.6) 75%); */
+    background-image: linear-gradient(140deg, rgba(188, 112, 164, 0.7) 0%, rgba(128, 0, 50, 1) 50%, rgba(109, 180, 238, 0.6) 75%);
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
 }
+
 .banner img{
     max-width: 100px;
     max-height: 55px;
@@ -87,23 +145,112 @@ header {
 
 /* Begin Services section */
 
-.services {
+#services {
+    height: 700px;
     background-color: #f8f8f8;
     text-align: center;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
 }
-.services h1 {
-    font-size: 3.5rem;
-    padding: 20px;
- }
+
 .services-box {
-    background-color: #fff;
-    height: 300px;
+    margin-top: 40px;
+    background-color: rgb(255,255,255);
+    /* background-color: rgba(204, 228, 254, 0.3); */
+    /* background-color: rgba(203, 108, 230, 0.4); */
+    height: 350px;
+    width: 270px;
     padding: 20px;
-    margin-bottom: 30px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
 }
-.services-box p {
-    margin: 20px 0;
-    font-size: 1.3rem;
+
+.services-box:nth-child(1){
+    background-image: url(cloud-dev.png);
+    background-size: cover;
+}
+
+.services-box:nth-child(2){
+    background-image: url(data-babe.png);
+    background-size: cover;
+}
+
+.services-box:nth-child(3){
+    background-image: url(navegador.png);
+    background-size: cover;
+} 
+
+.services-icons {
+    flex: 70%;
+}
+
+.services-icons img{
+    /* max-width: 170px; */
+    display:none;
+}
+
+.services-box ul{
+    flex: 30%;
+}
+
+.services-box li{
+    font-size: 1.6rem;
+    font-weight: 600;
     line-height: 1.4;
 }
+
+/* end services section */
+
+/* begin technology section  */
+
+#technologies{
+    background-image: url(tech-now.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom; 
+    height: 750px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+}
+
+.tech-content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tech-content img{
+    width: 500px;
+    margin-left: -50px;
+    z-index: -2;
+}
+
+.tech-items{
+    text-align: left;
+    width: 400px;
+    height: 280px;
+    /* background-color: #466179; */
+    color: black;
+    margin-left: -60px;
+    padding: 50px 0 50px 90px;
+    font-size: 1.6rem;
+    line-height: 3rem;
+    list-style-type: disc;
+    /* z-index: -1; */
+}
+
+.tech-items{ 
+    text-align: left;
+    width: 400px;
+    height: 280px;
+    margin: -60px;
+    padding: 0px 0 50px 90px;
+    font-size: 1.6rem;
+    line-height: 3rem;
+    list-style-type: disc;
+}
+
+.deslocada{
+    padding-left: 500px;    
+}
+
+/* End technology section  */
