@@ -7,7 +7,7 @@
     <title>LuaSoft</title>
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;600&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -16,67 +16,45 @@
             <img src="logo.png" alt="logo">
         </a>
         <nav id="nav">
-            <a href="#services">Services</a>
-            <a href="#technologies">Technologies</a>
-            <a href="#">Case Studies</a>
-            <a href="#" id="contact-us">Contact Us</a>
+            <a href="#works">Works</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
-    <section class="flex-container" id="sec1">
-        <div class="sec1-text flex-container-column">
-            <h3>Build what is in your mind</h3>
+
+    <section id="hero">
+        <video id="heroVideo" autoplay loop muted poster="images/hero-video-poster.jpg">
+            <source src="hero_bg.mp4" type="video/mp4" />
+        </video>
+        <!-- <img alt="poster image mobile" class="poster img-fluid mx-auto d-block d-sm-none" src="https://raw.githubusercontent.com/solodev/hero-with-video-bg/master/images/hero-video-poster.jpg" /> --> 
+        <div class="hero-left flex-container-column">
+            <h1>Build what is in</h1>
+            <h1>your mind</h1>
+        </div>
+        <div class="hero-right flex-container-column">
             <p>LuaSoft is here to help you overcome business challenges and grow with our software development,
                 databases, cloud services and custom solutions.</p>
-            <a href="#">Get a free consultation</a>
-        </div>
-        <div class="sec1-bg-img">
-            <img src="sec1-bg.png">
+            <a href="#contact">GET A FREE CONSULTATION</a>
         </div>
     </section>
-    <div class="banner flex-container">
-        <img src="b4.png" alt="first">
-        <img src="b2.png">
-        <img src="b3.png">
-        <img src="b5.png">
-        <img src="b1.png">
-    </div>
-    <section id="services">
-        <h1>Services</h1>
-        <div class="flex-container">
-            <div class="services-box flex-container-column">
-                <div class="services-icons flex-container">
-                    <img src="cloud.png">
-                </div>
-                <ul class="flex-container-column">
-                    <li>WEB DEVELOPMENT</li>
-                    <li>CLOUD DEVELOPMENT</li>
-                    <li>CUSTOM CHATBOTS</li>
-                </ul>
+
+
+    <section id="works">
+        <h1>They trusted us</h1>
+        <div class="works-content flex-container">
+            <div class="partners-box flex-container">
+                    <img src="b1.png">
+                    <img src="b2.png">
+                    <img src="b3.png">
+                    <img src="b4.png">
+                    <img src="b5.png">
             </div>
-            <div class="services-box flex-container-column">
-                <div class="services-icons flex-container">
-                    <img src="database.png">
-                </div>
-                <ul class="flex-container-column">
-                    <li>DATABASE DESIGN</li>
-                    <li>DATABASE MIGRATION</li>
-                </ul>
-            </div>
-            <div class="services-box flex-container-column">
-                <div class="services-icons flex-container">
-                    <img src="website.png">
-                </div>
-                <ul class="flex-container-column">
-                    <li>WORDPRESS DEVELOPMENT</li>
-                    <li>WIX DEVELOPMENT</li>
-                </ul>
-            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
     </section>
-    <section id="technologies">
-        <h1 class="deslocada">Technologies</h1>
-        <div class="tech-content">
-            <img src="tech-main.png">
+    <section id="about">
+        <h1>What we do</h1>
+        <div class="">
             <ul class="tech-items">
                 <li>Azure, AWS, GCP Development</li>
                 <li>Custom Chatbots</li>
@@ -88,7 +66,13 @@
         </div>
     </section>
 
-    <!-- case studies section idea: a background video of colorful doplets falling into a white board  -->
+    <section id="contact">
+
+    </section>
+
+    <footer>
+
+    </footer>
 
 </body>
 
