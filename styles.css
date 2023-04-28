@@ -15,6 +15,11 @@ body{
     font-family: 'Schibsted Grotesk', sans-serif;
 }
 
+h1 {
+    font-size: 4rem;
+    font-weight: 900;
+}
+
 .flex-container {
     display: flex;
     align-items: center;
@@ -30,23 +35,30 @@ body{
 /* Begin header  */
 
 header {
+    background-color: transparent;
     width: 100%;
-    height: 85px;
+    height: 75px;
     position: fixed;
     top: 0;
     color: white;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 20px 0 40px;
+    z-index: 2;
 }
 
-#logo img {
-    max-height: 40px;
-    margin-left: 10px;
+#logo span{
+    color: white;
+    font-weight: 900;
+    letter-spacing: 0.24em;
+    font-size: 1rem;
+    padding-left: 15px;
+    text-transform: uppercase;
 }
 
 #nav a{
     padding: 20px;
     font-weight: 900;
+    font-size: 0.9rem;
 }
 
 /* End header  */
@@ -55,6 +67,7 @@ header {
 
 #hero{
     height: 100vh;    
+    background: linear-gradient(145deg, rgba(140, 1, 39, 0.4) 0%, rgba(241,71,34,0.1) 35%, rgba(0,0,0,0) 100%);
 }
 
 #heroVideo {
@@ -65,11 +78,6 @@ header {
     left: 0;
     opacity: 1;
     z-index: -1;
-}
-
-.background-video-content {
-    position: relative;
-    z-index: 1;
 }
 
 video[poster] {
@@ -86,10 +94,8 @@ video[poster] {
 
 .hero-left{
     position: absolute;
-    top: 35%;
+    top: 30%;
     left: 10%;
-    font-size: 3rem;
-    font-weight: 900;
 }
 
 .hero-left h1:nth-child(1){
@@ -103,8 +109,8 @@ video[poster] {
 .hero-right{
     position: absolute;
     top: 60%;
-    right: 5%;
-    width: 500px;
+    right: 10%;
+    max-width: 450px;
     color:white;
     align-items: flex-end;
     gap: 40px;
@@ -127,31 +133,32 @@ video[poster] {
 /* Begin Works section */
 
 #works{
-    height: 600px;
+    min-height: 600px;
     background-color: black;
-
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 #works h1{
     color: #8C52FF;
     text-align: right;
-    font-size: 3rem;
-    font-weight: 900;
-    padding: 100px 40px;
+    padding: 150px 0 40px 0;
+    flex-basis: 80%;
 }
 
 .works-content{
-    gap: 60px;
     align-items: flex-end;
-    justify-content: space-between;
+    justify-content: flex-end;
     flex-wrap: wrap-reverse;
+    flex-basis: 80%;
 }
 
 .partners-box{
-    max-width: 450px;
+    max-width: 412px;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    padding-bottom: 100px;
 }
 
 .partners-box img{
@@ -163,6 +170,8 @@ video[poster] {
     color: white;
     text-align: right;
     max-width: 400px;
+    padding-bottom: 50px;
+    margin-left: auto;
 }
 
 
@@ -171,16 +180,124 @@ video[poster] {
 /* Begin About section  */
 
 #about{
-    height: 600px;
+    min-height: 700px;
+    padding-bottom: 60px;
+    background-color: white;
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
+
+#about h1{
+    color: black;
+    text-align: left;
+    padding: 100px 0 40px 0;
+    flex-basis: 80%;
+}
+
+.about-content{
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: baseline;
+    flex: 0 0 80%;
+}
+
+.about-content p{
+    max-width: 250px;
+    font-size: 0.9rem;
+    padding-bottom: 50px;
+    margin-right: auto;
+    flex-basis: 250px;
+}
+
+.columns{
+    max-width: 500px;
+    flex-basis: 500px;
+}
+
+.columns > ul:nth-child(1){
+    border-right: black solid 1px;
+}
+
+.columns > ul{
+    padding: 0 40px;
+    text-align: left;
+}
+
+.columns > ul > li:first-child{
+    font-size: 1rem;
+    font-weight: 900;
+    line-height: 3;
+}
+
 
 /* end About section  */
 
 /* Begin Contact section */
 
 #contact{
-    height: 600px;
+    min-height: 600px;
     background-color: black;
+    display: flex;
+    flex-flow: wrap row-reverse;
+    justify-content: space-around;
+    align-items: baseline;
+    color: #8C52FF;
+}
+
+#contact > h1{
+    padding: 150px 0;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    gap:8px;
+    margin-bottom: 200px;
+}
+
+.form-items{
+    width: 100%;
+    border:#8C52FF solid 1px;
+    border-radius: 6px;
+    padding: 1rem 1.8rem;
+    font-size: 0.9rem;
+}
+
+.form-items>label>input{
+    min-width: 100%;
+}
+
+#message{
+    min-height:140px;
+    min-width: 100%;
+}
+
+#submit-btn{
+    background-color: #8C52FF;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    padding: 0.8rem;
+    border-radius: 6px;
+    text-transform: uppercase;
+}
+
+#submit-btn:hover{
+    background-color: rgba(140, 82, 255, 0.8);
+    cursor: pointer;
+}
+
+#submit-btn:disabled{
+    color: rgba(0,0,0,0.2);
+    background-color: #8C52FF;
+    cursor: initial;
 }
 
 /* end Contact section  */
