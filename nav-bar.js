@@ -8,7 +8,6 @@ const heroOptions = {
   rootMargin: "75px 0px 0px 0px",
 };
 
-console.log(document.querySelector("#hero").offsetHeight)
 const viewPortHeightOffSet = document.querySelector("#hero").offsetHeight > 600 ? 
                                 document.querySelector("#hero").offsetHeight : 600;
 const aboutOptions = {
