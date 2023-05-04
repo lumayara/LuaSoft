@@ -1,8 +1,8 @@
+:root{
+    --clamp-basis: clamp(320px, 80%, 1000px);
+}
+
 html {
-    /* Setting a base font size of 10px give us easier rem calculations
-         Info: 1rem === 10px, 1.5rem === 15px, 2rem === 20px and so forth
-    */
-    /* font-size: 10px; */
 
     /* This offsets the header when you jump to a section */
     /* scroll-padding-top: 85px; */
@@ -13,17 +13,17 @@ html {
 
 body{
     font-family: 'Schibsted Grotesk', sans-serif;
+    overflow-x: hidden;
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: min(4rem, 14vw);
     font-weight: 900;
 }
 
 .flex-container {
     display: flex;
     align-items: center;
-    text-align: center;
 }
 
 .flex-container-column{
@@ -32,22 +32,25 @@ h1 {
     justify-content: center;
 }
 
-/* Begin header  */
+/*  Navbar  */
 
 header {
-    background-color: transparent;
+    --h-text: white;
+    --h-bg: transparent;
+
+    background-color: var(--h-bg);
     width: 100%;
     height: 75px;
     position: fixed;
     top: 0;
-    color: white;
+    color: var(--h-text);
     justify-content: space-between;
-    padding: 0 20px 0 40px;
+    padding: 0 1.5rem 0 2.3rem;
     z-index: 2;
 }
 
 #logo span{
-    color: white;
+    color: var(--h-text);
     font-weight: 900;
     letter-spacing: 0.24em;
     font-size: 1rem;
@@ -61,13 +64,28 @@ header {
     font-size: 0.9rem;
 }
 
-/* End header  */
+.nav-scrolled-white{
+    --h-text: black;
+    --h-bg: white;
+    /* border-bottom: black solid 1px; */
+    transition: all 0.3s ease-out;
+}
 
-/* Begin Hero Section  */
+.nav-scrolled-black{
+    --h-text: white;
+    --h-bg: black;
+    /* border-bottom: white solid 1px; */
+    transition: all 0.3s ease-out;
+}
+
+/* End Navbar  */
+
+/*  Hero Section  */
 
 #hero{
-    height: 100vh;    
-    background: linear-gradient(145deg, rgba(140, 1, 39, 0.4) 0%, rgba(241,71,34,0.1) 35%, rgba(0,0,0,0) 100%);
+    height: max(100vh, 600px);
+    height: max(100svh, 600px);    
+    background: linear-gradient(145deg, hsla(344, 100%, 28%, 0.4) 0%, hsla(11, 88%, 54%, 0.1) 35%, hsla(0, 0%, 0%, 0) 100%);
 }
 
 #heroVideo {
@@ -83,18 +101,29 @@ header {
 video[poster] {
     object-fit: cover;
     width: 100%;
-    height: 100%;
+    height: max(100vh, 600px);
+    height: max(100svh, 600px);    
+}
+
+.mobile-hero-img{
+    display: none;
 }
 
 @media (max-width: 575.98px) {
     #heroVideo {
         display: none;
    }
+   .mobile-hero-img{
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+   }
 }
 
 .hero-left{
     position: absolute;
-    top: 30%;
+    top: max(30%, 120px);
     left: 10%;
 }
 
@@ -108,7 +137,7 @@ video[poster] {
 
 .hero-right{
     position: absolute;
-    top: 60%;
+    top: max(60%, 30% + 13rem, 120px + 10rem);
     right: 10%;
     max-width: 450px;
     color:white;
@@ -130,10 +159,10 @@ video[poster] {
 
 /* end Hero section */
 
-/* Begin Works section */
+/*  Works section */
 
 #works{
-    min-height: 600px;
+    min-height: 800px;
     background-color: black;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -150,7 +179,7 @@ video[poster] {
     align-items: flex-end;
     justify-content: flex-end;
     flex-wrap: wrap-reverse;
-    flex-basis: 80%;
+    flex-basis: var(--clamp-basis);
 }
 
 .partners-box{
@@ -177,23 +206,23 @@ video[poster] {
 
 /* end Works section */
 
-/* Begin About section  */
+/*  About section  */
 
 #about{
-    min-height: 700px;
+    min-height: 800px;
     padding-bottom: 60px;
     background-color: white;
     display: flex;
-    align-items: baseline;
+    align-items: center;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 #about h1{
     color: black;
     text-align: left;
-    padding: 100px 0 40px 0;
-    flex-basis: 80%;
+    padding: 5rem 0 0 0;
+    flex-basis: var(--clamp-basis);
 }
 
 .about-content{
@@ -202,46 +231,37 @@ video[poster] {
     text-align: left;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: baseline;
-    flex: 0 0 80%;
+    justify-content: space-between;
+    flex-basis: var(--clamp-basis);
+    gap: 50px;
 }
 
 .about-content p{
-    max-width: 250px;
-    font-size: 0.9rem;
-    padding-bottom: 50px;
-    margin-right: auto;
-    flex-basis: 250px;
+    flex: 0 0 270px;
 }
 
 .columns{
-    max-width: 500px;
-    flex-basis: 500px;
+    flex: 0 1 500px;
+    gap: min(40px, 5vw);
 }
 
-.columns > ul:nth-child(1){
+.columns ul:first-child{
     border-right: black solid 1px;
+    padding-right: min(40px, 5vw);
 }
 
-.columns > ul{
-    padding: 0 40px;
-    text-align: left;
-}
-
-.columns > ul > li:first-child{
+.columns ul li:first-child{
     font-size: 1rem;
     font-weight: 900;
     line-height: 3;
 }
 
-
 /* end About section  */
 
-/* Begin Contact section */
+/*  Contact section */
 
 #contact{
-    min-height: 600px;
+    min-height: 800px;
     background-color: black;
     display: flex;
     flex-flow: wrap row-reverse;
@@ -302,9 +322,9 @@ video[poster] {
 
 /* end Contact section  */
 
-/* Begin Footer  */
+/* Footer  */
 
 footer {
-    height: 500px;
+    height: 600px;
     background-color: #8C52FF;
 }
