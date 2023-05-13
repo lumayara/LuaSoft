@@ -255,6 +255,12 @@ video[poster] {
     flex: 0 0 270px;
 }
 
+.contact-content{
+    width: 80%;
+    padding: 1rem;
+    margin-bottom: 5rem;
+}
+
 .columns{
     flex: 0 1 500px;
     gap: min(40px, 5vw);
