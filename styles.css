@@ -184,17 +184,26 @@ video[poster] {
     opacity: 0;
 }
 
-.appear{
+.appear-works-h1{
     transform: translateX(0%) !important;
     opacity: 1 !important;
     transition: all 0.9s ease-out;
 }
+
 
 .works-content{
     align-items: flex-end;
     justify-content: flex-end;
     flex-wrap: wrap-reverse;
     flex-basis: var(--clamp-basis);
+    transform: translateY(20%);
+    opacity: 0;
+}
+
+.appear-works-content {
+    transform: translateY(0%) !important;
+    opacity: 1 !important;
+    transition: all 0.9s ease-out 0.8s;
 }
 
 .partners-box{
