@@ -180,12 +180,14 @@ video[poster] {
     text-align: right;
     padding: 150px 0 40px 0;
     flex-basis: var(--clamp-basis);
-    transform: translateX(100%);
+    transform: translateX(20%);
+    opacity: 0;
 }
 
 .appear{
     transform: translateX(0%) !important;
-    transition: all 0.3s ease-out;
+    opacity: 1 !important;
+    transition: all 0.9s ease-out;
 }
 
 .works-content{

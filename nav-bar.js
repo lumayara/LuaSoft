@@ -19,25 +19,63 @@ const intervals = [0,0.05,0.1,0.15,0.2,0.25,0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65,
 
 const worksSectionObserver = new IntersectionObserver(entries => {
 	entries.forEach(entry=>{
-		console.log(entry.intersectionRatio)
+
+		if(entry.isIntersecting && entry.boundingClientRect.y<0){
+			header.classList.add('nav-scrolled-black');
+			header.classList.remove('nav-scrolled-white');
+		} else {
+			header.classList.remove('nav-scrolled-black');
+			header.classList.remove('nav-scrolled-white');
+		}
 
 		if(entry.intersectionRatio>0.5 && entry.boundingClientRect.y>0){
 			worksSection.firstElementChild.classList.add('appear')
 		}
-		if(entry.boundingClientRect.y<0){
-			header.classList.add('nav-scrolled-white');
-		} else {
-			header.classList.remove('nav-scrolled-white');
-		}
+		
 	})
-}, {
-	threshold: intervals
+}, {	
+	threshold: intervals,
 })
 
-// setTimeout(() => {worksSectionObserver.observe(worksSection)},
-// 2000)
 worksSectionObserver.observe(worksSection)
 
+const aboutSectionObserver = new IntersectionObserver(entries => {
+	entries.forEach(entry=>{
+
+		if(entry.isIntersecting && entry.boundingClientRect.y<0){
+			header.classList.remove('nav-scrolled-black');
+			header.classList.add('nav-scrolled-white');
+		}
+
+		if(entry.intersectionRatio>0.5 && entry.boundingClientRect.y>0){
+			aboutSection.firstElementChild.classList.add('appear')
+		}
+		
+	})
+}, {	
+	threshold: intervals,
+})
+
+aboutSectionObserver.observe(aboutSection)
+
+const contactSectionObserver = new IntersectionObserver(entries => {
+	entries.forEach(entry=>{
+
+		if(entry.isIntersecting && entry.boundingClientRect.y<0){
+			header.classList.remove('nav-scrolled-white');
+			header.classList.add('nav-scrolled-black');
+		}
+
+		if(entry.intersectionRatio>0.5 && entry.boundingClientRect.y>0){
+			contactSection.firstElementChild.classList.add('appear')
+		}
+		
+	})
+}, {	
+	threshold: intervals,
+})
+
+contactSectionObserver.observe(contactSection)
 
 
 
