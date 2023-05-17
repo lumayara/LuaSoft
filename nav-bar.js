@@ -3,6 +3,8 @@ const heroSection = document.querySelector('#hero');
 const worksSection = document.querySelector('#works');
 const aboutSection = document.querySelector('#about');
 const contactSection = document.querySelector('#contact');
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
 
 const heroOptions = {
   rootMargin: "75px 0px 0px 0px",
@@ -38,6 +40,10 @@ const aboutSectionObserver = new IntersectionObserver(entries => {
     });
 }, aboutOptions);
 
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+})
 
 heroSectionObserver.observe(heroSection);
 aboutSectionObserver.observe(aboutSection);
