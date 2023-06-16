@@ -1,16 +1,10 @@
 const header = document.querySelector('header');
-const heroSection = document.querySelector('#hero');
-const worksSection = document.querySelector('#works');
-const aboutSection = document.querySelector('#about');
-const contactSection = document.querySelector('#contact');
 const sections = document.querySelectorAll('section');
-
 
 const observer = new IntersectionObserver(entries => {
 	entries.forEach(entry => {
 		if(!entry.isIntersecting && entry.boundingClientRect.bottom <= 0){
 			// scrolling down
-			console.log(entry.target.id)
 			switch(entry.target.id){
 				case 'hero':
 					header.classList.add('nav-scrolled-black');
@@ -29,7 +23,6 @@ const observer = new IntersectionObserver(entries => {
 		}
 		if(entry.isIntersecting && entry.boundingClientRect.y < 0){
 			// scrolling up
-			console.log(entry.target)
 			switch(entry.target.id){
 				case 'hero':
 					header.classList.remove('nav-scrolled-black');
@@ -52,40 +45,31 @@ sections.forEach(section => {
 	observer.observe(section)
 });
 
+const secTitles = document.querySelectorAll('.sec-title');
+const secContent = [...document.getElementsByClassName('sec-content')];
+const secAllElements = [...secTitles];
+secContent.forEach(secContentElement => {
+	const secContentChildren = [...secContentElement.children];
+	secContentChildren.forEach(child => secAllElements.push(child));
+});
 
+const secObserver = new IntersectionObserver(entries => {
+	entries.forEach(entry=>{
+		if(entry.isIntersecting){
+			entry.target.classList.remove('notshowing')
+			entry.target.classList.add('showing');
+		}else {
+			entry.target.classList.remove('showing');
+			entry.target.classList.add('notshowing');
+		}
+	})
+},{
+	threshold: [0.3]
+});
 
-// const intervals = [0,0.001,0.05,0.1,0.15,0.2,0.25,0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.93,0.94,0.95,0.999,1];
-
-// const worksSectionObserver = new IntersectionObserver(entries => {
-// 	entries.forEach(entry=>{
-
-
-// 		if(entry.isIntersecting && entry.boundingClientRect.top <= 0 && entry.boundingClientRect.bottom >= 0){
-// 			header.classList.add('nav-scrolled-black');
-// 			header.classList.remove('nav-scrolled-white');
-// 		} else {
-// 			header.classList.remove('nav-scrolled-black');
-// 		}
-
-// 		if(entry.intersectionRatio>0.5){
-// 			worksSection.firstElementChild.classList.add('appear-works-h1')
-// 			worksSection.querySelector('.works-content').classList.add('appear-works-content')
-
-// 		} else if(entry.intersectionRatio<0.2){
-// 			worksSection.firstElementChild.classList.remove('appear-works-h1')
-// 			worksSection.querySelector('.works-content').classList.remove('appear-works-content')
-
-// 		}
-		
-// 	})
-// }, {	
-// 	threshold: intervals,
-// 	// rootMargin: '25px 0px -7px 0px'
-
-// })
-
-// worksSectionObserver.observe(worksSection)
-
+secAllElements.forEach(item=>{
+	secObserver.observe(item)
+});
 
 
 
