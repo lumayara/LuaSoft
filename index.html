@@ -164,8 +164,10 @@
         var form = document.getElementById("formId");
         function submitForm(event) {
             event.preventDefault();
+            alert("oi")
             grecaptcha.ready(function() {
             grecaptcha.execute('6Ld3dKUmAAAAAC3P0k14tg7mexw6m_g8BBJ_3Ik9', {action: 'submit'}).then(function(token) {
+                alert("hi")
             });
           });
         }
