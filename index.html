@@ -124,7 +124,7 @@
         <h1 class="sec-title">Contact us</h1>
         <div class="sec-content flex-container">
                 
-            <form class="form">
+            <form class="form" id="demo-form">
                 <div class="form-items">
                     <label class="name" for="name">
                         <input id="name" class="input-box" type="text" name="name" placeholder="Your Name" required />
@@ -153,7 +153,7 @@
                 data-action='submit'
                 type="submit"
                 disabled>Submit
-            </button> 
+                </button> 
             </form>
 
             <p>We believe in building strong relationships with our clients and providing exceptional customer support. If you have any questions, inquiries, or would like to discuss how LuaSoft can assist your business, we invite you to get in touch with us.</p>
@@ -167,7 +167,7 @@
     </footer>
     <script>
         function onSubmit(token) {
-          document.getElementById("submit-btn").submit();
+          document.getElementById("demo-form").submit();
         }
     </script>
     <script src="form.js"></script>
