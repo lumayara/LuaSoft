@@ -1,44 +1,100 @@
 const header = document.querySelector('header');
-const heroSection = document.querySelector('#hero');
-const worksSection = document.querySelector('#works');
-const aboutSection = document.querySelector('#about');
-const contactSection = document.querySelector('#contact');
+const sections = document.querySelectorAll('section');
 
-const heroOptions = {
-  rootMargin: "75px 0px 0px 0px",
-};
+const observer = new IntersectionObserver(entries => {
+	entries.forEach(entry => {
+		if(!entry.isIntersecting && entry.boundingClientRect.bottom <= 0){
+			// scrolling down
+			switch(entry.target.id){
+				case 'hero':
+					header.classList.add('nav-scrolled-black');
+					document.querySelector('#logo').classList.toggle('logo-svg');
+					break;
+				case 'works':
+					header.classList.remove('nav-scrolled-black');
+					header.classList.add('nav-scrolled-white');
+					break;
+				case 'about':
+					header.classList.remove('nav-scrolled-white');
+					header.classList.add('nav-scrolled-black');
+					break;
+			}
 
-const viewPortHeightOffSet = document.querySelector("#hero").offsetHeight > 600 ? 
-                                document.querySelector("#hero").offsetHeight : 600;
-const aboutOptions = {
-    rootMargin: `0px 0px -${viewPortHeightOffSet}px 0px`,
-};
+		}
+		if(entry.isIntersecting && entry.boundingClientRect.y < 0){
+			// scrolling up
+			switch(entry.target.id){
+				case 'hero':
+					header.classList.remove('nav-scrolled-black');
+					document.querySelector('#logo').classList.toggle('logo-svg');
+					break;
+				case 'works':
+					header.classList.remove('nav-scrolled-white');
+					header.classList.add('nav-scrolled-black');
+					break;
+				case 'about':
+					header.classList.remove('nav-scrolled-black');
+					header.classList.add('nav-scrolled-white');
+					break;
+			}
+		}
+	})
+}, {})
+
+sections.forEach(section => {
+	observer.observe(section)
+});
+
+const secTitles = document.querySelectorAll('.sec-title');
+const secContent = [...document.getElementsByClassName('sec-content')];
+const secAllElements = [...secTitles];
+secContent.forEach(secContentElement => {
+	const secContentChildren = [...secContentElement.children];
+	secContentChildren.forEach(child => secAllElements.push(child));
+});
+
+const secObserver = new IntersectionObserver(entries => {
+	entries.forEach(entry=>{
+		if(entry.isIntersecting){
+			entry.target.classList.remove('notshowing')
+			entry.target.classList.add('showing');
+		}else {
+			entry.target.classList.remove('showing');
+			entry.target.classList.add('notshowing');
+		}
+	})
+},{
+	threshold: [0.3]
+});
+
+secAllElements.forEach(item=>{
+	secObserver.observe(item)
+});
 
 
-const heroSectionObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) {
-        header.classList.add('nav-scrolled-black');
-      } else {
-        header.classList.remove('nav-scrolled-black');
-      }
-    });
-  }, heroOptions);
-  
-const aboutSectionObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // console.log(entry)
-        header.classList.add('nav-scrolled-white');
-        header.classList.remove('nav-scrolled-black');
-      } else {
-        header.classList.add('nav-scrolled-black');
-        header.classList.remove('nav-scrolled-white');
-      }
-    });
-}, aboutOptions);
 
+// Attach a click event listener to each navbar link + hero 'get a free consultation' button
+const navbarLinks = document.querySelectorAll('header a');
+const freeConsultationLink = document.querySelectorAll('#hero a');
+const scrollLinks = [...navbarLinks, ...freeConsultationLink];
 
-heroSectionObserver.observe(heroSection);
-aboutSectionObserver.observe(aboutSection);
-  
+scrollLinks.forEach(link => {
+	link.addEventListener('click', e => {
+		e.preventDefault(); // Prevent default link behavior
+
+		const targetId = link.getAttribute('href'); // Get the target section's ID
+
+		// Use smooth scrolling to scroll to the target section
+		if(targetId==='#top'){
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth',
+			});
+		} else {
+			document.querySelector(targetId).scrollIntoView({
+				behavior: 'smooth',
+			});
+		};
+	});
+});
+

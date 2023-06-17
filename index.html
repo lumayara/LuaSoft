@@ -14,8 +14,8 @@
 <body>
     
     <header class="flex-container">
-        <a id="logo" class="flex-container" href="#">
-            <svg width="32" height="43" viewBox="0 0 32 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <a id="logo" class="logo-svg flex-container" href="#top">
+            <svg width="30" height="43" viewBox="0 0 32 43" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M20.5146 33.713C20.5146 34.3093 20.0309 34.7942 19.4346 34.7942H12.6346C12.0384 34.7942 11.5547 34.3093 11.5547 33.713C11.5547 33.1155 12.0384 32.6306 12.6346 32.6306H19.4346C20.0309 32.6306 20.5146 33.1155 20.5146 33.713Z" fill="var(--h-logo)"/>
                 <path d="M20.5146 36.3467C20.5146 36.9454 20.0309 37.4291 19.4346 37.4291H12.6346C12.0384 37.4291 11.5547 36.9454 11.5547 36.3467C11.5547 35.7517 12.0384 35.2668 12.6346 35.2668H19.4346C20.0309 35.2668 20.5146 35.7517 20.5146 36.3467Z" fill="var(--h-logo)"/>
                 <path d="M19.9019 38.8342C19.9019 39.3488 19.4863 39.7669 18.9704 39.7669H13.1007C12.5861 39.7669 12.168 39.3488 12.168 38.8342C12.168 38.3196 12.5861 37.9015 13.1007 37.9015H18.9704C19.4863 37.9015 19.9019 38.3196 19.9019 38.8342Z" fill="var(--h-logo)"/>
@@ -41,9 +41,9 @@
                 <path d="M21.2784 27.7652C20.9234 28.0113 20.577 28.328 20.2814 28.6917C19.9894 29.0579 19.7495 29.4698 19.601 29.883C19.5058 30.0809 19.4699 30.2949 19.4254 30.4891C19.3722 30.6821 19.3561 30.8701 19.3524 31.0433C19.3177 31.3885 19.3623 31.673 19.3969 31.8697C19.4303 32.0651 19.4563 32.174 19.4563 32.174C19.4563 32.174 19.4959 32.0639 19.5528 31.8771C19.606 31.6915 19.6765 31.4305 19.794 31.1336C19.8917 30.8355 20.0488 30.504 20.2294 30.17C20.3185 30.0017 20.4199 29.8335 20.5337 29.6702C20.6364 29.4983 20.7601 29.3387 20.8925 29.1841C21.1349 28.8587 21.4306 28.573 21.7089 28.3033C21.9947 28.0398 22.278 27.8023 22.5291 27.6031C23.035 27.2073 23.4086 26.9487 23.4086 26.9487C23.4086 26.9487 22.9447 26.9574 22.3089 27.2122C21.9897 27.3322 21.6322 27.519 21.2784 27.7652Z" fill="var(--h-logo)"/>
                 <path d="M17.5378 27.68V26.8636C17.5378 26.6978 17.5737 26.5692 17.6442 26.4937C17.7036 26.4294 17.7803 26.4158 17.8323 26.4158C17.9832 26.4158 18.2071 26.5358 18.2071 26.8636C18.2071 27.2743 17.9325 27.5279 17.5378 27.68ZM14.5356 27.68C14.1397 27.5279 13.8663 27.2743 13.8663 26.8636C13.8663 26.5358 14.0902 26.4158 14.2411 26.4158C14.2931 26.4158 14.3686 26.4294 14.4292 26.4937C14.4984 26.5692 14.5356 26.6978 14.5356 26.8636V27.68ZM17.8323 25.6315C17.5378 25.6315 17.2669 25.7478 17.0715 25.9593C16.9255 26.1139 16.7536 26.3985 16.7536 26.8636V27.8569C16.2785 27.9089 15.7949 27.9089 15.3198 27.8569V26.8636C15.3198 26.3985 15.1479 26.1139 15.0032 25.9593C14.8052 25.7478 14.5356 25.6315 14.2411 25.6315C13.6721 25.6315 13.082 26.0917 13.082 26.8636C13.082 27.377 13.3035 28.1575 14.5356 28.5027V31.9552H15.3198V28.6449C15.754 28.687 16.3181 28.6882 16.7536 28.6449V31.9552H17.5378V28.5027C18.7699 28.1575 18.9914 27.377 18.9914 26.8636C18.9914 26.0917 18.4013 25.6315 17.8323 25.6315Z" fill="var(--h-logo)"/>
             </svg>    
-            <span id="tt">LuaSoft</span>
+            <span>LuaSoft</span>
         </a>
-        <nav>
+        <nav id="nav">
             <a href="#works">Works</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
@@ -57,21 +57,29 @@
         </video>
         <img alt="poster image mobile" class="mobile-hero-img" src="video-poster.jpg" /> 
         
-
-        <div class="hero-left flex-container-column">
-            <h1>Build what is in</h1>
-            <h1>your mind</h1>
+        <div class="hero-content flex-container-column">
+            <div class="hero-left">
+                <h1>Build what is in</h1>
+                <h1>your mind</h1>
+            </div>
+            <div class="hero-right flex-container-column">
+                <p>LuaSoft is here to offer expertise in software development, databases, cloud services, and custom solutions. With our comprehensive range of services, we empower you to transform your ideas into reality, overcome obstacles, and achieve remarkable success.</p>
+                <a href="#contact">GET A FREE CONSULTATION</a>
+            </div>
         </div>
-        <div class="hero-right flex-container-column">
-            <p>LuaSoft is here to offer expertise in software development, databases, cloud services, and custom solutions. With our comprehensive range of services, we empower you to transform your ideas into reality, overcome obstacles, and achieve remarkable success.</p>
-            <a href="#contact">GET A FREE CONSULTATION</a>
+        <div class="arrow bounce">
+            <a href="#works">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="16" viewBox="0 0 26 16" fill="none">
+                    <path d="M25.1339 3.83333L13.9339 15.0667C13.8005 15.2 13.6561 15.2947 13.5005 15.3507C13.345 15.4067 13.1783 15.4342 13.0005 15.4333C12.8227 15.4333 12.6561 15.4053 12.5005 15.3493C12.345 15.2933 12.2005 15.1991 12.0672 15.0667L0.833854 3.83333C0.522743 3.52222 0.367188 3.13333 0.367188 2.66666C0.367188 2.19999 0.533854 1.8 0.867187 1.46666C1.20052 1.13333 1.58941 0.966661 2.03385 0.966661C2.4783 0.966661 2.86719 1.13333 3.20052 1.46666L13.0005 11.2667L22.8005 1.46666C23.1116 1.15555 23.4952 0.999994 23.9512 0.999994C24.4072 0.999994 24.8014 1.16666 25.1339 1.49999C25.4672 1.83333 25.6339 2.22222 25.6339 2.66666C25.6339 3.11111 25.4672 3.49999 25.1339 3.83333Z" fill="white" fill-opacity="0.7"/>
+                </svg>
+            </a>
         </div>
     </section>
 
 
-    <section id="works" class="flex-container">
-        <h1>They trusted us</h1>
-        <div class="works-content flex-container">
+    <section id="works" class="sec flex-container-column">
+        <h1 class="sec-title">They trusted us</h1>
+        <div class="sec-content flex-container">
             <div class="partners-box flex-container">
                     <img src="b1.png">
                     <img src="b2.png">
@@ -84,9 +92,9 @@
     </section>
 
 
-    <section id="about">
-        <h1>What we do</h1>
-        <div class="about-content flex-container">
+    <section id="about" class="sec flex-container-column">
+        <h1 class="sec-title">What we do</h1>
+        <div class="sec-content flex-container">
             <p> At LuaSoft, we offer a wide array of services that leverage the latest technologies to empower your business. We combine our technical prowess with a deep understanding of your business to develop solutions that drive innovation, efficiency, and growth. We have extensive experience in developing applications and deploying services on leading technologies. </p>
             <div class="columns flex-container">
                 <ul>
@@ -111,35 +119,34 @@
         </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="sec flex-container-column">
         
-        <h1>Contact us</h1>
-        <div class="contact-content flex-container">
-            <p>We believe in building strong relationships with our clients and providing exceptional customer support. If you have any questions, inquiries, or would like to discuss how LuaSoft can assist your business, we invite you to get in touch with us.</p>
-        </div>
-        <form class="form">
-            <div class="form-items">
-                <label class="name" for="name">
-                    <input id="name" class="input-box" type="text" name="name" placeholder="Your Name" required />
-                </label>
-            </div>
+        <h1 class="sec-title">Contact us</h1>
+        <div class="sec-content flex-container">
+                
+            <form class="form">
+                <div class="form-items">
+                    <label class="name" for="name">
+                        <input id="name" class="input-box" type="text" name="name" placeholder="Your Name" required />
+                    </label>
+                </div>
 
-            <div class="form-items">
-                <label for="email">
-                    <input id="email" type="email" name="email" placeholder="Email Address" required />
-                </label>
-            </div>
+                <div class="form-items">
+                    <label for="email">
+                        <input id="email" type="email" name="email" placeholder="Email Address" required />
+                    </label>
+                </div>
 
-            <div class="form-items">
-                <label for="company">
-                    <input id="company" type="text" name="company" placeholder="Company" required />
-                </label>
-            </div>
+                <div class="form-items">
+                    <label for="company">
+                        <input id="company" type="text" name="company" placeholder="Company" required />
+                    </label>
+                </div>
 
-            <div class="form-items">
-                <textarea id="message" name="message" placeholder="Message" required></textarea>
-            </div>
-            <button class="g-recaptcha" 
+                <div class="form-items">
+                    <textarea id="message" name="message" placeholder="Message" required></textarea>
+                </div>
+                <button class="g-recaptcha" 
                 id="submit-btn"
                 data-sitekey="6Ld3dKUmAAAAAC3P0k14tg7mexw6m_g8BBJ_3Ik9" 
                 data-callback='onSubmit' 
@@ -147,7 +154,11 @@
                 type="submit"
                 disabled>Submit
             </button> 
-        </form>
+            </form>
+
+            <p>We believe in building strong relationships with our clients and providing exceptional customer support. If you have any questions, inquiries, or would like to discuss how LuaSoft can assist your business, we invite you to get in touch with us.</p>
+        
+         </div> 
         
     </section>
 
