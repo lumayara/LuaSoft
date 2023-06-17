@@ -1,4 +1,11 @@
 const header = document.querySelector('header');
+const heroSection = document.querySelector('#hero');
+const worksSection = document.querySelector('#works');
+const aboutSection = document.querySelector('#about');
+const contactSection = document.querySelector('#contact');
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
 const sections = document.querySelectorAll('section');
 
 const observer = new IntersectionObserver(entries => {
@@ -45,6 +52,10 @@ sections.forEach(section => {
 	observer.observe(section)
 });
 
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+})
 const secTitles = document.querySelectorAll('.sec-title');
 const secContent = [...document.getElementsByClassName('sec-content')];
 const secAllElements = [...secTitles];
