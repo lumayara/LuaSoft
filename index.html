@@ -146,8 +146,14 @@
                 <div class="form-items">
                     <textarea id="message" name="message" placeholder="Message" required></textarea>
                 </div>
-
-                <button id="submit-btn" type="submit" disabled>Submit</button>
+                <button class="g-recaptcha" 
+                id="submit-btn"
+                data-sitekey="6Ld3dKUmAAAAAC3P0k14tg7mexw6m_g8BBJ_3Ik9" 
+                data-callback='onSubmit' 
+                data-action='submit'
+                type="submit"
+                disabled>Submit
+            </button> 
             </form>
 
             <p>We believe in building strong relationships with our clients and providing exceptional customer support. If you have any questions, inquiries, or would like to discuss how LuaSoft can assist your business, we invite you to get in touch with us.</p>
@@ -159,10 +165,14 @@
     <footer>
 
     </footer>
-
+    <script>
+        function onSubmit(token) {
+          document.getElementById("submit-btn").submit();
+        }
+    </script>
     <script src="form.js"></script>
     <script src="nav-bar.js"></script>
-
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 </body>
 
 </html>
