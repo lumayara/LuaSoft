@@ -142,7 +142,7 @@
         <h1 class="sec-title">Contact us</h1>
         <div class="sec-content flex-container">
                 
-            <form class="form">
+            <form class="form" id="formId">
                 <div class="form-items">
                     <label class="name" for="name">
                         <input id="name" class="input-box" type="text" name="name" placeholder="Your Name" required />
@@ -164,8 +164,8 @@
                 <div class="form-items">
                     <textarea id="message" name="message" placeholder="Message" required></textarea>
                 </div>
-
-                <button id="submit-btn" type="submit" disabled>Submit</button>
+                <div class="g-recaptcha" data-sitekey="6Ld3_KUmAAAAABVa4jKvTSEKj2tiwXTdXPVmAgjQ"></div>
+                <button id="submit-btn" type="submit" disable>Submit</button>
             </form>
 
             <p>We believe in building strong relationships with our clients and providing exceptional customer support. If you have any questions, inquiries, or would like to discuss how LuaSoft can assist your business, we invite you to get in touch with us.</p>
@@ -177,7 +177,16 @@
     <footer>
 
     </footer>
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        var form = document.getElementById("formId");
+        function submitForm(event) {
+            event.preventDefault();
+            alert("oi")
+            document.getElementById("submit-btn").disabled = false;
+        }
+        form.addEventListener('submit', submitForm);
+    </script>
     <script src="form.js"></script>
     <script src="nav-bar.js"></script>
 
