@@ -1,5 +1,7 @@
 const header = document.querySelector('header');
 const sections = document.querySelectorAll('section');
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
 
 const observer = new IntersectionObserver(entries => {
 	entries.forEach(entry => {
@@ -40,6 +42,11 @@ const observer = new IntersectionObserver(entries => {
 		}
 	})
 }, {})
+
+hamburger.addEventListener("click", () => {
+	hamburger.classList.toggle("active");
+	navMenu.classList.toggle("active");
+})
 
 sections.forEach(section => {
 	observer.observe(section)
