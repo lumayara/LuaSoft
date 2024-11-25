@@ -137,7 +137,7 @@
         <h1 class="sec-title">Contact us</h1>
         <div class="sec-content flex-container">
                 
-            <form class="form" id="formId">
+            <!-- <form class="form" id="formId">
                 <div class="form-items">
                     <label class="name" for="name">
                         <input id="name" class="input-box" type="text" name="name" placeholder="Your Name" required />
@@ -161,9 +161,11 @@
                 </div>
                 <div class="g-recaptcha" data-sitekey="6Ld3_KUmAAAAABVa4jKvTSEKj2tiwXTdXPVmAgjQ"></div>
                 <button id="submit-btn" type="submit" disable>Submit</button>
-            </form>
+            </form> -->
 
             <p>We believe in building strong relationships with our clients and providing exceptional customer support. If you have any questions, inquiries, or would like to discuss how LuaSoft can assist your business, we invite you to get in touch with us.</p>
+            <p>Contact number: 202-550-0950</p>
+            <p>Email: luana@lua-soft.com</p>
         
          </div> 
         
@@ -177,7 +179,7 @@
         var form = document.getElementById("formId");
         function submitForm(event) {
             event.preventDefault();
-            alert("oi")
+            //alert("oi")
             document.getElementById("submit-btn").disabled = false;
         }
         form.addEventListener('submit', submitForm);
